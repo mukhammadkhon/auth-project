@@ -1,0 +1,42 @@
+<div class="flex justify-center  h-full">
+    <div class=" rounded px-10 py-10 bg-sky-200 h-[400px] w-[400px] m-auto">
+      <div class="flex justify-center">
+      <div class=" w-full">
+        <h1 class=" text-center text-white">Sign In</h1>
+        <div class="formGroup">
+          <input type="text"  class="formControl border rounded mb-3 w-full p-2" placeholder="Username" #userName required>
+        </div>
+        <div class="formGroup">
+          <input type="password" class="formControl border rounded  w-full p-2" placeholder="Password" #userPassword required>
+        </div>
+        <!-- Calling SignIn Api from AuthService -->
+
+        <div class=" flex flex-col items-center justify-between h-[150px] mt-10">
+        <div class="formGroup">
+          <button mat-raised-button color="primary" class=""  (click)="authService.SignIn(userName.value, userPassword.value)">Log In</button>
+        </div>
+        <div class="formGroup">
+          <span class="text-white">Or</span>
+        </div>
+        <!-- Calling GoogleAuth Api from AuthService -->
+        <div class="formGroup">
+          <button mat-raised-button color="accent"  (click)="authService.GoogleAuth()">
+            Log in with Google
+          </button>
+        </div>
+      
+
+        <div class="">
+          <span class=" cursor-pointer underline text-white" routerLink="/forgot-password">Forgot Password?</span>
+        </div>
+
+      
+      <div class="redirectToLogin justify-center text-white ">
+        <span>Don't have an account?<span class="redirect underline cursor-pointer" routerLink="/register-user"> Sign Up</span></span>
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  
